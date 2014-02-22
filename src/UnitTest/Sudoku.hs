@@ -12,5 +12,5 @@ main = defaultMain testSuite
 
 testSuite :: [Test]
 testSuite = foldl (++) [] [
-    Sudoku.testSuite
+    Solution.testSuite
   ]

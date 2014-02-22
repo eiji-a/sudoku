@@ -16,7 +16,7 @@ runTests =
     args <- filter (/= "--tests") `fmap` getArgs
     (defaultMainWithArgs testSuite args)
 
-test :: [Test]
+testSuite :: [Test]
 testSuite = foldl (++) [] [
     Sudoku.testSuite
   ]
