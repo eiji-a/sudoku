@@ -18,4 +18,7 @@ main = defaultMain testSuite
 testSuite :: [Test]
 testSuite = [
     testGroup "conversion" [
+    ]
+  , testGroup "value" [
+    ]
   ]
