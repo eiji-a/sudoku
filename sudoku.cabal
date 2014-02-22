@@ -1,0 +1,23 @@
+Name:                   sudoku
+Version:                0.1
+Author:                 Eiji Akagi <akagi.eiji@gmail.com>
+Maintainer:             Eiji Akagi <akagi.eiji@gmail.com>
+License:                BSD3
+License-File:           LICENSE
+Synopsis:               Sudoku solver?
+Description:            Sudoku solver?
+Homepage:               N/A
+Category:               Game
+Cabal-Version:          >= 1.10
+Build-Type:             Simple
+Library
+  Default-Language:     Haskell2010
+  GHC-Options:          -Wall
+  Exposed-Modules:      Sudoku.Solution
+  Build-Depends:        base >= 4.0 && < 5
+                      , array
+
+
+Source-Repository head
+  Type:                 git
+  Location:             git://github.com/eiji-a/sudoku.git

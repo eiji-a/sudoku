@@ -1,4 +1,4 @@
 sudoku
 ======
 
-Sudoku resolver
+Sudoku solver
