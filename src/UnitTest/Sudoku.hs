@@ -5,6 +5,7 @@
 module UnitTest.Sudoku where
 
 import Test.Framework
+import qualified UnitTest.Sudoku.Plane    as Plane    (testSuite)
 import qualified UnitTest.Sudoku.Problem  as Problem  (testSuite)
 import qualified UnitTest.Sudoku.Solution as Solution (testSuite)
 
@@ -13,6 +14,7 @@ main = defaultMain testSuite
 
 testSuite :: [Test]
 testSuite = foldl (++) [] [
-    Problem.testSuite
+    Plane.testSuite
+  , Problem.testSuite
   , Solution.testSuite
   ]
