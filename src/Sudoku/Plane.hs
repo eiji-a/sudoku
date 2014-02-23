@@ -42,8 +42,27 @@ mergePlane (x:xs) (y:ys)
     res' = mergePlane xs ys
 
 mergeVal :: Char -> Char -> Maybe Char
-mergeVal '-' y = Just y
-mergeVal x '-' = Just x
 mergeVal x y
-  | x == y    = Just x
+  | isValidT x == False = Nothing
+  | isValidT y == False = Nothing
+  | x == '-'            = Just y
+  | y == '-'            = Just x
+  | x == y              = Just x
   | otherwise = Nothing
+
+isValidT :: Char -> Bool
+isValidT '-' = True
+isValidT '0' = True
+isValidT '1' = True
+isValidT _   = False
+
+extractRow :: Plane -> String
+extractRow p = ""
+
+extractCol :: Plane -> String
+extractCol p = ""
+
+extractBlk :: Plane -> String
+extractBlk p = ""
+
+
