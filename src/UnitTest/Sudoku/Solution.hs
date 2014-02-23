@@ -27,6 +27,7 @@ tests = "Sudoku Solution" ~: [
     , "pos -1" ~: posToXy (-1) ~=? Nothing
     , "pos -5" ~: posToXy (-5) ~=? Nothing
     , "pos 81" ~: posToXy 81 ~=? Nothing
+    , "pos 81" ~: posToXy 81 ~=? Just (8,9)
     ]
   , "xyToPos" ~:
     test [
