@@ -38,6 +38,19 @@ tests = "Sudoku Solution" ~: [
     , "xy 10,9" ~: xyToPos (10,9) ~=? Nothing
     , "xy 9,10" ~: xyToPos (9,10) ~=? Nothing
     ]
+  , "get value" ~:
+    test [
+      "x (1,1)" ~: solutionX (0, 1) ~=? Just 1
+    , "x (9,1)" ~: solutionX (17, 1) ~=? Just 9
+    , "x (0,1)" ~: solutionX (-1, 1) ~=? Nothing
+    , "y (1,1)" ~: solutionY (0, 1) ~=? Just 1
+    , "y (1,9)" ~: solutionY (72, 1) ~=? Just 9
+    , "y (0,1)" ~: solutionY (-1, 1) ~=? Nothing
+    , "val 1" ~: solutionVal (0, 1) ~=? 1
+    , "val 9" ~: solutionVal (0, 9) ~=? 9
+    , "val 10" ~: solutionVal (0,10) ~=? 10
+    , "val -1" ~: solutionVal (0, (-1)) ~=? -1
+    ]
   ]
 
 test_conversion = [

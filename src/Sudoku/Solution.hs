@@ -8,7 +8,12 @@ module Sudoku.Solution (
 , Solution
 , posToXy
 , xyToPos
+, solutionX
+, solutionY
+, solutionVal
 ) where
+
+import Data.Maybe
 
 import Sudoku.Config
 
@@ -33,22 +38,21 @@ xyToPos (x,y)
   where
     p = (x - 1) + (y - 1) * boardSize
 
-{-
-solutionX :: Solution -> Int
+solutionX :: Solution -> Maybe Int
 solutionX (p, v)
-  | xy == Nothing     = 0
-  | xy == Just (x, y) = x
+  | xy == Nothing = Nothing
+  | otherwise     = Just (fst (fromJust(xy)))
   where
     xy = posToXy p
 
-solutionY :: Solution -> Int
+solutionY :: Solution -> Maybe Int
 solutionY (p, v)
-  | xy == Nothing     = 0
-  | xy == Just (x, y) = y
+  | xy == Nothing = Nothing
+  | otherwise     = Just (snd (fromJust(xy)))
   where
     xy = posToXy p
 
 solutionVal :: Solution -> Value
 solutionVal (p, v) = v
--}
+
 
