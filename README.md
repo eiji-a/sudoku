@@ -1,4 +1,5 @@
-sudoku
+sudoku 
 ======
 
-Sudoku solver
+Sudoku solver (v 0.1)
+
