@@ -7,3 +7,4 @@ cabal-dev
 .virthualenv
 *~
 Test
+test-results.xml
