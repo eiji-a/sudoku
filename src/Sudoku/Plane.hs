@@ -9,6 +9,9 @@ module Sudoku.Plane (
 , fillT
 , initPlane
 , mergePlane
+, extractRow
+, extractCol
+, extractBlk
 ) where
 
 import Data.Maybe
@@ -56,13 +59,14 @@ isValidT '0' = True
 isValidT '1' = True
 isValidT _   = False
 
-extractRow :: Plane -> String
-extractRow p = ""
+extractRow :: Plane -> Int -> String
+extractRow p r = ""
 
-extractCol :: Plane -> String
-extractCol p = ""
+extractCol :: Plane -> Int -> String
+extractCol p c = ""
 
-extractBlk :: Plane -> String
-extractBlk p = ""
+extractBlk :: Plane -> Int -> Int -> String
+extractBlk p x y = ""
+
 
 

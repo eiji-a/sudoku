@@ -20,6 +20,7 @@ testSuite = hUnitTestToTests $ tests
 tests = "Sudoku Plane" ~: [
     "init Plane" ~: test_init
   , "merge Planes" ~: test_merge
+  , "extract Plane" ~: test_extract
   ]
 
 test_init = test [
@@ -37,3 +38,23 @@ test_merge = test [
   , "- <= 2" ~: mergePlane "---" "222" ~=? Nothing
   , "2 <= 2" ~: mergePlane "222" "222" ~=? Nothing
   ]
+
+test_extract = test [
+    "row 1" ~: extractRow p 1 ~=? "123456781"
+  , "row 8" ~: extractRow p 8 ~=? "198765432"
+  , "col 1" ~: extractCol p 1 ~=? "198763219"
+  , "col 9" ~: extractCol p 9 ~=? "987654321"
+  , "blk 1,1" ~: extractBlk p 1 1 ~=? "123912891"
+  , "blk 3,3" ~: extractBlk p 3 3 ~=? "543432321"
+  ]
+  where
+    p =  "123456789"
+      ++ "912345678"
+      ++ "891234567"
+      ++ "789123456"
+      ++ "678912345"
+      ++ "321987654"
+      ++ "219876543"
+      ++ "198765432"
+      ++ "987654321"
+
